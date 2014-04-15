@@ -27,18 +27,28 @@ int main(void)
 {  
     int i = 0;
 
+    /* TEST FFT */
     MakeInput();  
-  
     fft(x,SAMPLE_NODES);  
 
-    //printf("\n====FFT====\n");
+    for (i=0; i<SAMPLE_NODES; i++) {
+        printf("%.5f %.5f\n", x[i].real, x[i].imag);
+    }
+  
+    ifft(x,SAMPLE_NODES);  
     for (i=0; i<SAMPLE_NODES; i++) {
         printf("%.5f %.5f\n", x[i].real, x[i].imag);
     }
 
-    //printf("\n====IFFT====\n");
+    /* TEST FFT with REAL INPUTS */
+    MakeInput();  
+    fft_real(x,SAMPLE_NODES);  
+
+    for (i=0; i<SAMPLE_NODES; i++) {
+        printf("%.5f %.5f\n", x[i].real, x[i].imag);
+    }
   
-    ifft(x,SAMPLE_NODES);  
+    ifft_real(x,SAMPLE_NODES);  
 
     for (i=0; i<SAMPLE_NODES; i++) {
         printf("%.5f %.5f\n", x[i].real, x[i].imag);

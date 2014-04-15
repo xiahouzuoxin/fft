@@ -19,7 +19,9 @@
 typedef COMPLEX TYPE_FFT;  /* Define COMPLEX in Config.h */
 
 extern int fft(TYPE_FFT *x, uint32_t N);
+extern int fft_real(TYPE_FFT *x, uint32_t N);
 extern int ifft(TYPE_FFT *x, uint32_t N);
+extern int ifft_real(TYPE_FFT *x, uint32_t N);
 
 #endif /* ZX_FFT_H_ */
 

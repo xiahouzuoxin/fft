@@ -138,7 +138,7 @@ int main(void)
     }
 
 	for (ch=0; ch<CH_NUM; ch++) {
-		fft(x[ch], FIFO_SIZE);
+		fft_real(x[ch], FIFO_SIZE);
     }
 
     printf("\n\n");
@@ -180,9 +180,9 @@ int main(void)
     }
 
     /* Cross-correlation Step3: IFFT */
-    ifft(x[0], FIFO_SIZE);  // 01
-    ifft(x[1], FIFO_SIZE);  // 02
-    ifft(x[2], FIFO_SIZE);  // 12
+    ifft_real(x[0], FIFO_SIZE);  // 01
+    ifft_real(x[1], FIFO_SIZE);  // 02
+    ifft_real(x[2], FIFO_SIZE);  // 12
 
     printf("\n\n");
     for (ch=0; ch<3; ch++) {
