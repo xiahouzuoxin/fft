@@ -53,8 +53,8 @@ int fft(TYPE_FFT *x, uint32_t N)
 	 */
 	l = N >> 1;
 	j = l;
-	//BitReverse(x,x,N,M);
-    for (i=1; i<=N-2; i++) {
+    ip = N-2;
+    for (i=1; i<=ip; i++) {
         if (i < j) {
             tR = x[j].real;
 			tI = x[j].imag;
@@ -86,7 +86,7 @@ int fft(TYPE_FFT *x, uint32_t N)
         sI = -sin_tb[k];  // -sin(PI / le2)
 		for (j=1; j<=le2; j++) {   /* loop for each sub DFT */
 			//jm1 = j - 1;
-			for (i=j-1; i<=N-1; i+=le) {  /* loop for each butterfly */
+			for (i=j-1; i<N; i+=le) {  /* loop for each butterfly */
 				ip = i + le2;
 				tR = x[ip].real * uR - x[ip].imag * uI;
 				tI = x[ip].real * uI + x[ip].imag * uR;

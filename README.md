@@ -10,6 +10,9 @@ Fllow steps to use this projects:
 2. make run
 3. open matlab and run plot_result.m
 
+![FFT-标准正弦信号](./FFT-标准正弦信号.png)
+![FFT-含噪声信号](./FFT-含噪声信号.png)
+![FFT-互相关时延计算](./FFT-互相关时延计算.png)
 
 ### UPDATES
 
