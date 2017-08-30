@@ -9,6 +9,9 @@
 #ifndef _CONFIG_H
 #define _CONFIG_H
 
+#include <stdio.h>
+#include <math.h>
+
 /* type redefinition */
 /*
 typedef enum
